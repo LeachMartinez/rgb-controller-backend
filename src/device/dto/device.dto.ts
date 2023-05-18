@@ -4,4 +4,5 @@ export class DeviceDto {
   type: 'deviceMatrix' | 'deviceStrip';
   ledCount: number;
   name: string;
+  active: 0 | 1;
 }
