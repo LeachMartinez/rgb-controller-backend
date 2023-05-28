@@ -1,5 +1,13 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  OneToOne,
+  JoinColumn,
+} from 'typeorm';
 import IDevice from '../device/interfaces/device.interface';
+
+import { Mode } from './mode.entity';
 @Entity()
 export class Device implements IDevice {
   @PrimaryGeneratedColumn()
@@ -19,4 +27,8 @@ export class Device implements IDevice {
 
   @Column()
   ledCount: number;
+
+  @OneToOne(() => Mode, (mode) => mode.device)
+  @JoinColumn()
+  mode: Mode;
 }

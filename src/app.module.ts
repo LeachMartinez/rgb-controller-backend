@@ -3,6 +3,7 @@ import { DeviceController } from './device/device.controller';
 import { DeviceService } from './device/device.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Device } from './entity/device.entity';
+import { Mode } from './entity/mode.entity';
 import { DeviceModule } from './device/device.module';
 
 @Module({
@@ -14,7 +15,7 @@ import { DeviceModule } from './device/device.module';
       username: 'postgres',
       password: 'postgres',
       database: 'rgb_controller_dev',
-      entities: [Device],
+      entities: [Device, Mode],
       synchronize: true,
     }),
     DeviceModule,

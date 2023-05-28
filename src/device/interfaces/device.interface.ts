@@ -1,4 +1,4 @@
-import IMode from './mode.interface';
+import IMode from '../../mode/interfaces/mode.interface';
 export default interface IDevice {
   id?: number;
   name: string;
